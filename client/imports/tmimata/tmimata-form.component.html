@@ -1,0 +1,25 @@
+<div class="form-container">
+    <div class="container-background">
+        <div class="form-content">
+            <div class="form-center">
+                <h1>Προσθήκη τμήματος</h1>
+            </div>
+            <div class="form-center">
+                <form [hidden]="!user" formGroup="addForm" (ngSubmit)="addTmima()" >
+                    <div style="display: table-row">
+                        <div class="form-inputs">
+                            <md-input divideColor="accent" formControlName="name" placeholder="Τμήμα..." ></md-input>
+                            <br />
+                            <button color="accent" md-raised-button type="submit">Αποθήκευση</button>
+                        </div>
+                    </div>
+                </form>
+                <div [hidden]="user">
+                    Πρέπει να συνδεθείτε για να προσθέσετε τμήμα.
+                    <br />
+                    <a [routerLink]="['/login']">Σύνδεση</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
