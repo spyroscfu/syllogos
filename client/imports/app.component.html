@@ -1,0 +1,23 @@
+<md-sidenav-layout class="sidenav-layout">
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    SideNav
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-button (click)="sidenav.toggle()">
+      <i class="material-icons">menu</i>
+    </button>
+    <span>
+      Syllogos
+    </span>
+    <span class="toolbar-filler"></span>
+    <div *ngIf="!user">
+      <a md-button (click)="openLoginDialog()">Είσοδος</a>
+      <a md-button>Εγγραφή</a>
+    </div>
+    <div *ngIf="user">
+      <span>Hello user</span>
+      <button md-button (click)="logout()">Έξοδος</button>
+    </div>
+  </md-toolbar>
+</md-sidenav-layout>
+<router-outlet></router-outlet>

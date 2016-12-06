@@ -14,7 +14,7 @@ Meteor.publish('tmimata', function (options:Options, tmimaName?:string) {
     return Tmimata.find(buildQuery.call(this, null,tmimaName), options);
 })
 
-function buildQuery(tmimaId?:sting, tmimaName?:string) {
+function buildQuery(tmimaId?:string, tmimaName?:string) {
     if (tmimaId){
         return {
             _id: tmimaId

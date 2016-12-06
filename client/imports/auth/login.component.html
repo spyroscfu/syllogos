@@ -1,0 +1,17 @@
+<md-card>
+    <md-card-title>Είσοδος</md-card-title>
+    <form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="login()" layout="column" >
+        <md-card-content>
+            <md-input formControlName="email" type="email" placeholder="email"></md-input>
+            <md-input formControlName="password" type="password" placeholder="password"></md-input>
+            <span *ngIf="errMessage">{{errMessage}}</span>
+        </md-card-content>
+        <md-card-actions>
+            <button md-button (click)="login()" color="primary" type="submit">Είσοδος</button>
+            <button md-button (click)="dialogRef.close()">Close</button>
+        </md-card-actions>
+    </form>
+    <div [hidden]="errMessage==''">
+        <p color="primary">{{errMessage}}</p>
+    </div>
+</md-card>
